@@ -1,0 +1,11 @@
+<h1>My page</h1>
+<ul>
+  <li><%= current_teacher.email %></li>
+  <li><%= current_teacher.name %></li>
+  <li><%= current_teacher.sex %></li>
+  <li><%= $post %></li>
+  <li><%= $teacher %></li>
+
+</ul>
+<br/>
+<%= link_to 'edit', :controller => "home", :action => "profile" %>

@@ -1,0 +1,11 @@
+		<div id="teacher_nav">
+            <% if teacher_signed_in? %>
+              Logged in as <strong><%= current_teacher.email %></strong>.
+              <%= link_to 'Edit profile', edit_teacher_registration_path %> |
+              <%= link_to "Logout", destroy_teacher_session_path, method: :delete %>
+            <% else %>
+              <%= link_to "Sign up", new_teacher_registration_path %> |
+              <%= link_to "Login", new_teacher_session_path %>
+            <% end %>
+          </div>
+         

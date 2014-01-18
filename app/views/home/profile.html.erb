@@ -1,0 +1,39 @@
+<script src="http://ajaxzip3.googlecode.com/svn/trunk/ajaxzip3/ajaxzip3.js" charset="UTF-8"></script>
+
+<h1>プロフィール編集するでな</h1>
+<%= form_tag "/home/create" do %>
+
+  <div class="field">
+   <%= label :postal_code, :郵便番号 %>
+  <input type="text" name="postal_code" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');"><br>
+    <%= label :address,:住所 %>
+  <input name="address" type="text" id="location_address" />
+  </div>
+
+
+  <%= label_tag "名前: " %>
+  <%= text_field_tag :name, current_teacher.name %><br />
+  <%= label_tag "メールアドレス: " %>
+  <%= text_field_tag :email, current_teacher.email %><br />
+  <%= label_tag "性別 " %>
+  男:
+  <% if current_teacher.sex == "male" %>
+    <%= radio_button_tag :sex, "male", :checked %>
+  <% else %>
+    <%= radio_button_tag :sex, "male" %>
+  <% end %>
+  女:
+  <% if current_teacher.sex == "female" %>
+    <%= radio_button_tag :sex, "female", :checked %><br />
+  <% else %>
+    <%= radio_button_tag :sex, "female" %><br />
+  <% end %>
+
+  <div class="actions">
+  
+    <%= submit_tag %>
+  </div>
+
+
+
+<% end %>

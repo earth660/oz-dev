@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Oz</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if teacher_signed_in? %>
+<ul>
+  <li><%= link_to "ログアウト", destroy_teacher_session_path, method: :delete %></li>
+</ul>
+<% else %>
+  <%= link_to "Sign up", new_teacher_registration_path %> or 
+  <%= link_to "Sign in", new_teacher_session_path %>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>
