@@ -11,10 +11,10 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: oz_development
+  database: 
   pool: 5
-  username: root
-  password:
+  username:
+  password: 
   socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -23,17 +23,17 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: oz_test
+  database:
   pool: 5
-  username: root
+  username:
   password:
   socket: /tmp/mysql.sock
 
 production:
   adapter: mysql2
   encoding: utf8
-  database: oz_production
+  database:
   pool: 5
-  username: root
+  username:
   password:
   socket: /tmp/mysql.sock
